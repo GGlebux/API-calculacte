@@ -1,6 +1,6 @@
-package com.example.calculator.servises;
+package com.example.calculator.dao;
 
-import com.example.calculator.models.CalendarHolidays;
+import com.example.calculator.db.CalendarHolidays;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 
@@ -28,7 +28,7 @@ public class CalculacteServis {
                 calendar.setTime(date);
 
                 for (int i = 0; i < vacation; i++) {
-                    if (CalendarHolidays.contains(calendar)) {
+                    if (CalendarHolidays.getHolidays().contains(calendar)) {
                         noPayDays++;
                     }
                     calendar.add(Calendar.DATE, 1);

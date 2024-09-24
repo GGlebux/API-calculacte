@@ -1,10 +1,10 @@
-package com.example.calculator.models;
+package com.example.calculator.db;
 
 import java.util.*;
 
 
 public class CalendarHolidays {
-    private static final List<Calendar> holidays;
+    public static final List<Calendar> holidays;
 
     static {
         holidays = new ArrayList<>();
@@ -20,11 +20,9 @@ public class CalendarHolidays {
     }
 
 
-    public static boolean contains(Calendar someDay) {
-        return holidays.contains(someDay);
-
+    public static List<Calendar> getHolidays() {
+        return holidays;
     }
-
 
 }
 
